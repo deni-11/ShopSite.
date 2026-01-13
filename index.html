@@ -1,0 +1,111 @@
+  <!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shop Aggregator — Главная</title>
+  <link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ffffff" d="M7 4h10l1 4h3v2h-2l-1.5 9h-13L3 6H1V4h6Zm0 4h10l-.5-2H7.5L7 8Zm2 4a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm6 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"/></svg>' />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <!-- ===== Top bar: логотип + prefs + корзина ===== -->
+  <header class="topbar">
+    <a class="logo" href="#" aria-label="Вернуться на главную">
+      <img src="images/logo.png" alt="Shop Aggregator logo" class="logo-img">
+    </a>
+  <div class="actions">
+    <button class="cart-btn" aria-label="Открыть корзину (пока не работает)">
+      <span aria-hidden="true">🛒</span>
+      <span>Корзина</span>
+      <span class="badge" aria-hidden="true">0</span>
+    </button>
+  </div>
+  </header>
+
+  <!-- CART PANEL -->
+  <div class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button class="cart-close" id="closeCart">&times;</button>
+    </div>
+
+    <div class="cart-items" id="cartItems">
+      <!-- Items will appear here dynamically -->
+    </div>
+
+    <div class="cart-footer">
+      <div class="summary">
+        <div class="line"><span>Subtotal</span><span id="subtotal">€0</span></div>
+        <div class="line"><span>Shipping</span><span>Free</span></div>
+      </div>
+      <button class="checkout">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- ===== Навигация: глобальные категории + поиск ===== -->
+  <nav class="nav" aria-label="Основная навигация">
+    <div class="categories" role="tablist" aria-label="Категории товаров">
+      <button class="chip" role="tab" data-cat="trends">🔥 Тренды</button>
+      <button class="chip" role="tab" data-cat="electronics">📱 Электроника</button>
+      <button class="chip" role="tab" data-cat="fashion">👟 Одежда и обувь</button>
+      <button class="chip" role="tab" data-cat="home">🏠 Дом и сад</button>
+      <button class="chip" role="tab" data-cat="kitchen">🍳 Кухня</button>
+      <button class="chip" role="tab" data-cat="games">🎮 Игры</button>
+      <button class="chip" role="tab" data-cat="kids">🧸 Детям</button>
+      <button class="chip" role="tab" data-cat="beauty">💄 Красота</button>
+      <button class="chip" role="tab" data-cat="tools">⚙️ Инструменты</button>
+      <button class="chip" role="tab" data-cat="sport">🚲 Спорт</button>
+    </div>
+
+
+    <div class="search" role="search">
+      <input type="text" placeholder="Искать товары, бренды и категории…" aria-label="Поиск по товарам" />
+      <button aria-label="Найти (пока не работает)">Найти</button>
+    </div>
+  </nav>
+
+  <!-- ===== Контент: сайдбар (фильтры) + сетка карточек ===== -->
+  <main class="container" aria-live="polite">
+    <div class="grid">
+      <aside class="sidebar" aria-label="Фильтры">
+        <h3>Быстрые фильтры</h3>
+        <div class="filter-group">
+          <label class="filter-item"><input type="checkbox" /> Бесплатная доставка</label>
+          <label class="filter-item"><input type="checkbox" /> В наличии</label>
+          <label class="filter-item"><input type="checkbox" /> Рейтинг 4★+</label>
+        </div>
+        <h3>Цена</h3>
+        <div class="filter-group">
+          <label class="filter-item">от <input type="number" min="0" placeholder="0" class="price-input" /></label>
+          <label class="filter-item">до <input type="number" min="0" placeholder="999" class="price-input" /></label>
+        </div>
+      </aside>
+
+      <section class="products" aria-label="Список товаров"></section>
+    </div>
+  </main>
+
+  <div class="pagination-controls" id="paginationControls"></div>
+
+  <footer>
+    © 2025 Shop Aggregator • Демонстрационный макет главной страницы
+  </footer>
+  <!-- PRODUCT INFO PANEL -->
+  <div class="product-panel" id="productPanel">
+    <div class="product-header">
+      <h2 id="productTitle"></h2>
+      <button class="product-close" id="closeProduct">&times;</button>
+    </div>
+    <div class="product-content">
+      <img id="productImage" alt="">
+      <div class="product-details">
+        <p><strong>Цена:</strong> <span id="productPrice"></span></p>
+        <p><strong>В наличии:</strong> <span id="productStock"></span></p>
+        <p><strong>Описание:</strong> <span id="productDesc"></span></p>
+      </div>
+    </div>
+  </div>
+  <div class="product-overlay" id="productOverlay"></div>
+</body>
+</html>

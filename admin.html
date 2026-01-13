@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <header>
+    <h1>Admin Panel</h1>
+    <p>Manage your shop products — add, edit, delete and update.</p>
+  </header>
+
+  <section id="formSection">
+    <h2>Add / Edit Product</h2>
+
+    <div class="form-grid"> 
+      <input id="pTitle" placeholder="Title">
+      <input id="pPrice" placeholder="Price" type="number">
+      <input id="pRating" type="number" placeholder="Rating (1–5)">
+      <input id="pImage" placeholder="Image file name (e.g. phone.png)">
+      <input id="pIcon" placeholder="Icon (emoji)">
+      
+      <div class="categories-group">
+        <span>Categories:</span>
+        <label><input type="checkbox" name="pCategory" value="trends"> 🔥 Тренды</label>
+        <label><input type="checkbox" name="pCategory" value="electronics"> 📱 Электроника</label>
+        <label><input type="checkbox" name="pCategory" value="fashion"> 👕 Одежда и обувь</label>
+        <label><input type="checkbox" name="pCategory" value="home"> 🏡 Дом и сад</label>
+        <label><input type="checkbox" name="pCategory" value="kitchen"> 🍳 Кухня</label>
+        <label><input type="checkbox" name="pCategory" value="games"> 🎮 Игры</label>
+        <label><input type="checkbox" name="pCategory" value="kids"> 🧸 Детям</label>
+        <label><input type="checkbox" name="pCategory" value="beauty"> 💄 Красота</label>
+        <label><input type="checkbox" name="pCategory" value="tools"> ⚙️ Инструменты</label>
+        <label><input type="checkbox" name="pCategory" value="sport"> 🚲 Спорт</label>
+      </div>
+
+      <label><input type="checkbox" id="pFreeDelivery"> Free Delivery</label>
+      <label><input type="checkbox" id="pInStock"> In Stock</label>
+    </div>
+
+    <button id="saveProduct">Save Product</button>
+    <button id="resetForm" class="secondary">Reset</button>
+  </section>
+
+  <section id="previewSection">
+    <h2>Live Preview</h2>
+    <div id="previewCard" class="product-card">
+      <p>Fill in the form to preview…</p>
+    </div>
+  </section>
+
+  <section id="listSection">
+    <h2>Product List</h2>
+
+    <input id="searchInput" placeholder="Search…">
+
+    <table id="productTable">
+      <thead>
+        <tr>
+          <th>ID</th><th>Title</th><th>Price</th><th>Category</th><th>Edit</th><th>Delete</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section id="toolsSection">
+    <h2>Tools</h2>
+    <button id="exportJson">Export JSON</button>
+    <button id="importJson">Import JSON</button>
+    <button id="loadDemo">Load Demo Products</button>
+    <input type="file" id="jsonFileInput" accept=".json" hidden>
+  </section>
+
+  <script src="admin.js"></script>
+</body>
+</html>

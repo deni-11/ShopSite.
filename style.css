@@ -447,8 +447,87 @@ body.cart-open { overflow: hidden; }
 }
 
 .page-btn.active {
-    background: linear-gradient(135deg, var(--brand-2), var(--brand));
-    border-color: rgba(255,255,255,.4);
-    box-shadow: var(--shadow);
-    cursor: default;
+  background: linear-gradient(135deg, var(--brand-2), var(--brand));
+  border-color: rgba(255,255,255,.4);
+  box-shadow: var(--shadow);
+  cursor: default;
+}
+.checkout-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.checkout-overlay.open {
+  display: flex;
+}
+/* === CHECKOUT MODAL (PAY FORM) === */
+.checkout-modal {
+  background: #ffffff;          /* light background */
+  color: #000000;               /* black text */
+  padding: 24px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.checkout-modal h2 {
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.checkout-modal label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: #000;
+}
+
+.checkout-modal input,
+.checkout-modal select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #000;
+  font-size: 14px;
+}
+
+.checkout-modal input::placeholder {
+  color: #666;
+
+}
+.checkout-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.checkout-actions button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.checkout-actions button:not(.secondary) {
+  background: linear-gradient(135deg, var(--brand-2), var(--brand));
+  color: #fff;
+}
+
+.checkout-actions .secondary {
+  background: #e5e5e5;
+  color: #000;
 }

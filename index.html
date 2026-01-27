@@ -39,7 +39,9 @@
         <div class="line"><span>Subtotal</span><span id="subtotal">€0</span></div>
         <div class="line"><span>Shipping</span><span>Free</span></div>
       </div>
-      <button class="checkout">Proceed to Checkout</button>
+      <button id="checkoutBtn" class="checkout-btn">
+       Оплатить
+      </button>
     </div>
   </div>
 
@@ -107,5 +109,51 @@
     </div>
   </div>
   <div class="product-overlay" id="productOverlay"></div>
+    <div class="checkout-overlay" id="checkoutOverlay">
+    <div class="checkout-modal">
+      <h2>Оформление заказа</h2>
+
+      <!-- Способ оплаты -->
+      <label>
+        Способ оплаты
+        <select id="paymentMethod">
+          <option value="cash">При получении</option>
+          <option value="online">Оплатить сейчас</option>
+        </select>
+      </label>
+
+      <!-- Способ доставки -->
+      <label>
+        Способ доставки
+        <select id="deliveryMethod">
+          <option value="courier">Курьер</option>
+          <option value="pickup">Самовывоз</option>
+          <option value="point">Пункт выдачи</option>
+        </select>
+      </label>
+
+      <!-- Адрес -->
+      <label>
+        Адрес доставки
+        <input type="text" id="address" placeholder="Город, улица, дом">
+      </label>
+
+      <!-- Контакты -->
+      <label>
+        Имя
+        <input type="text" id="customerName">
+      </label>
+
+      <label>
+        Телефон
+        <input type="tel" id="phone" placeholder="+357...">
+      </label>
+
+      <div class="checkout-actions">
+        <button id="confirmOrder">Подтвердить заказ</button>
+        <button class="secondary" id="closeCheckout">Отмена</button>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
